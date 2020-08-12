@@ -45,10 +45,11 @@ var createTaskEl = function(taskDataObj) {
     var taskInfoEl = document.createElement("div");
     taskInfoEl.className = "task-info";
     taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
+    listItemEl.appendChild(taskInfoEl);
 
     var taskActionsEl = createTaskActions(taskIdCounter);
     listItemEl.appendChild(taskActionsEl);
-
+        
     // add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
 
@@ -88,7 +89,7 @@ var createTaskActions = function(taskId) {
     var statusChoices = ["To Do", "In Progress", "Completed"];
  
     for (var i = 0; i < statusChoices.length; i++) {
-        
+
         // create option element
         var statusOptionEl = document.createElement("option");
         statusOptionEl.textContent = statusChoices[i];
